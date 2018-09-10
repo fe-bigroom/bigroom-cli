@@ -39,6 +39,20 @@ program
     require('../lib/generate').generate(template, options)
   })
 
+program
+  .command('dev')
+  .action((cmd) => {
+    const options = cleanArgs(cmd)
+    require('../lib/dev').dev(options)
+  })
+
+program
+  .command('build')
+  .action((cmd) => {
+    const options = cleanArgs(cmd)
+    require('../lib/build').build(options)
+  })
+
 program.parse(process.argv)
 
 if (!process.argv.slice(2).length) {
