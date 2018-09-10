@@ -1,5 +1,11 @@
 # bigroom-cli
 
+## install
+
+```shell
+  npm install -g bigroom-cli
+```
+
 ## bigroom create
 
 To create a new project, run:
