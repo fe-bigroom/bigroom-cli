@@ -24,7 +24,7 @@ program
 
 program
   .command('create <app-name>')
-  .description('create a new project\n\n  Examples:\n\n    $ bigroom create my-project\n')
+  .description(`create a new project\n\n    ${chalk.grey('Examples:  $ bigroom create my-project')}\n`)
   .action((name, cmd) => {
     const options = cleanArgs(cmd)
     require('../lib/create').create(name, options)
@@ -33,7 +33,7 @@ program
 program
   .command('generate <template>')
   .alias('g')
-  .description('generate a new project\n\n  Examples:\n\n    $ bigroom generate chrome-extension\n\n    $ bigroom g chrome-extension')
+  .description(`generate a new project\n\n    ${chalk.grey('Examples:  $ bigroom generate/g chrome-extension')}\n`)
   .action((template, cmd) => {
     const options = cleanArgs(cmd)
     require('../lib/generate').generate(template, options)
@@ -41,6 +41,7 @@ program
 
 program
   .command('dev')
+  .description(`run the local project\n\n    ${chalk.grey('Examples:  $ bigroom dev')}\n`)
   .action((cmd) => {
     const options = cleanArgs(cmd)
     require('../lib/dev').dev(options)
@@ -48,6 +49,7 @@ program
 
 program
   .command('build')
+  .description(`build the project\n\n    ${chalk.grey('Examples:  $ bigroom build')}\n`)
   .action((cmd) => {
     const options = cleanArgs(cmd)
     require('../lib/build').build(options)
