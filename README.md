@@ -23,7 +23,7 @@ To generate a new project with \<template\>, run:
   bigroom g chrome-extension
 ```
 
-all templates: [chrome-extension]
+all templates: [[chrome-extension](https://github.com/fe-bigroom/bigroom-react-chrome-extension/tree/master/templates)]
 
 ## bigroom dev
 
