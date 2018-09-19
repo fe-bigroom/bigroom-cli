@@ -40,6 +40,14 @@ program
   })
 
 program
+  .command('clear-cache')
+  .description(`build the project\n\n    ${chalk.grey('Examples:  $ bigroom clear-cache')}\n`)
+  .action((cmd) => {
+    const options = cleanArgs(cmd)
+    require('../lib/clearCache').clearCache(options)
+  })
+
+program
   .command('dev')
   .description(`run the local project\n\n    ${chalk.grey('Examples:  $ bigroom dev')}\n`)
   .action((cmd) => {

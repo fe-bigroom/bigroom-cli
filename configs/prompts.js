@@ -6,19 +6,19 @@ module.exports = {
       choices: [{
         name: 'React',
         value: 'react'
+      }, {
+        name: 'Vue',
+        value: 'vue'
       }
       // , {
-      //   name: 'Vue',
-      //   value: 'vue'
-      // }, {
       //   name: 'Null',
       //   value: 'null'
       // }
       ],
       afterChoose: (value) => {
         const framework = {
-          react: 'gitlab:github.com:fe-bigroom/bigroom-react-chrome-extension#master'
-          // vue: 'gitlab:github.com:fe-bigroom/bigroom-vue-chrome-extension#master',
+          react: 'gitlab:github.com:fe-bigroom/bigroom-react-chrome-extension#master',
+          vue: 'gitlab:github.com:fe-bigroom/bigroom-vue-chrome-extension#master',
           // null: 'gitlab:github.com:fe-bigroom/bigroom-chrome-extension#master'
         }
         return framework[value]
