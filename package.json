@@ -1,6 +1,6 @@
 {
   "name": "bigroom-cli",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Command line interface for rapid development",
   "bin": {
     "bigroom": "bin/index.js"
