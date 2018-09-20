@@ -3,6 +3,7 @@
 const chalk = require('chalk')
 const semver = require('semver')
 const requiredVersion = require('../package.json').engines.node
+const { checkUpdate } = require('../lib/utils')
 
 function checkNodeVersion (wanted, id) {
   if (!semver.satisfies(process.version, wanted)) {
@@ -26,8 +27,10 @@ program
   .command('create <app-name>')
   .description(`create a new project\n\n    ${chalk.grey('Examples:  $ bigroom create my-project')}\n`)
   .action((name, cmd) => {
-    const options = cleanArgs(cmd)
-    require('../lib/create').create(name, options)
+    checkUpdate().then(() => {
+      const options = cleanArgs(cmd)
+      require('../lib/create').create(name, options)
+    })
   })
 
 program
@@ -35,32 +38,40 @@ program
   .alias('g')
   .description(`generate a new project\n\n    ${chalk.grey('Examples:  $ bigroom generate/g chrome-extension')}\n`)
   .action((template, cmd) => {
-    const options = cleanArgs(cmd)
-    require('../lib/generate').generate(template, options)
+    checkUpdate().then(() => {
+      const options = cleanArgs(cmd)
+      require('../lib/generate').generate(template, options)
+    })
   })
 
 program
   .command('clear-cache')
   .description(`build the project\n\n    ${chalk.grey('Examples:  $ bigroom clear-cache')}\n`)
   .action((cmd) => {
-    const options = cleanArgs(cmd)
-    require('../lib/clearCache').clearCache(options)
+    checkUpdate().then(() => {
+      const options = cleanArgs(cmd)
+      require('../lib/clearCache').clearCache(options)
+    })
   })
 
 program
   .command('dev')
   .description(`run the local project\n\n    ${chalk.grey('Examples:  $ bigroom dev')}\n`)
   .action((cmd) => {
-    const options = cleanArgs(cmd)
-    require('../lib/dev').dev(options)
+    checkUpdate().then(() => {
+      const options = cleanArgs(cmd)
+      require('../lib/dev').dev(options)
+    })
   })
 
 program
   .command('build')
   .description(`build the project\n\n    ${chalk.grey('Examples:  $ bigroom build')}\n`)
   .action((cmd) => {
-    const options = cleanArgs(cmd)
-    require('../lib/build').build(options)
+    checkUpdate().then(() => {
+      const options = cleanArgs(cmd)
+      require('../lib/build').build(options)
+    })
   })
 
 program.parse(process.argv)
