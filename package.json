@@ -1,6 +1,6 @@
 {
   "name": "bigroom-cli",
-  "version": "2.1.1",
+  "version": "2.2.1",
   "description": "Command line interface for rapid development",
   "bin": {
     "bigroom": "bin/index.js"
@@ -19,11 +19,13 @@
     "execa": "^1.0.0",
     "fs-extra": "^7.0.0",
     "inquirer": "^6.2.0",
+    "latest-version": "^4.0.0",
     "listr": "^0.14.2",
     "request": "^2.88.0",
     "request-promise": "^4.2.2",
     "rimraf": "^2.6.2",
-    "semver": "^5.5.1"
+    "semver": "^5.5.1",
+    "update-notifier": "^2.5.0"
   },
   "engines": {
     "node": ">=8.9"
